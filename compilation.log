@@ -1,0 +1,6 @@
+test -d obj || mkdir obj
+test -d bin || mkdir bin
+cc -Iinclude -c src/utils.c -o obj/utils.o
+cc -Iinclude -c src/mshell.c -o obj/mshell.o
+cc -Iinclude -c src/builtins.c -o obj/builtins.o
+cc -Iinclude obj/utils.o obj/mshell.o obj/builtins.o obj/siparse.a -o bin/mshell 
